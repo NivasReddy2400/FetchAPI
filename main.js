@@ -79,3 +79,21 @@ fetchPromise.then((response) => {
 });
 
 console.log("Started request…");
+
+// function dostuff(){
+//     console.log('dostuff1')
+//     return first()
+//     .then(fres => {
+//         console.log('dostuff2')
+//         console.log(fres);
+//         return second(fres);
+
+//     })
+// }
+
+
+
+// dostuff().then(res => {
+//     console.log('0dostuff')
+//     console.log(res);
+// })
