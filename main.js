@@ -69,6 +69,22 @@ function addPost(e){
 }
 
 
+const gip = "https://api.giphy.com/v1/gifs/search?api_key=xZ4G36lV0Diu4E0XKiYieDM9QNqpYv9v&q=small&limit=1&offset=0&rating=g&lang=en";
+
+const gif = fetch(gip);
+gif.then(response => response.json())
+.then((gifdata) => {
+    console.log("byeee")
+    return gifdata
+}).then(displaygif);
+
+function displaygif(gifdata){
+    console.log(gifdata.data[0].images.original.url)
+    document.querySelector('#gif').src = gifdata.data[0].images.original.url;
+    console.log('hellooooo')
+}
+
+
 
 const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
 
@@ -193,8 +209,6 @@ console.log(promise4)
 
 Promise.any([promise1,promise2,promise3,promise4]).then(values => 
   console.log(values))
-
-
 
 
 
